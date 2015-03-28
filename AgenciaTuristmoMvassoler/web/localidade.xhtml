@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/templates/template.xhtml">
+        <ui:define name="conteudo">
+            <h:form id="frmLocalidade">
+                <p:commandButton value="Novo" icon="ui-icom-pluss" id="insButton" update=":frmCadastro" actionListener="#{localidadeBean.prepararAdd}" oncomplete="PF('dlgCadastro').show()" />
+                <p:dataTable id="dTableLocalidades" var="loc" value="#{localidadeBean.localidades}"   styleClass="elemento-margin-top">
+                    <f:facet name="header" >LOCALIDADES</f:facet>
+                    <p:column headerText="Nome">
+                        <h:outputText value="#{loc.nome}"/>                    
+                    </p:column>
+                    <p:column headerText="Foto Local">
+                        <h:outputText value="#{loc.fotoLocal}"/>                    
+                    </p:column>                    
+                    <p:column headerText="Agẽncia">
+                        <h:outputText value="#{loc.agencia.nome}"/>                    
+                    </p:column>                   
+                    <p:column style="width: 6%;" exportable="false">
+                        <p:commandButton id="altButton" icon="ui-icon-pencil" title="Editar" update=":frmCadastro" actionListener="#{localidadeBean.editar(loc)}" oncomplete="PF('dlgCadastro').show()"/>
+                    </p:column>
+                    <p:column style="width: 6%;" exportable="false">
+                        <p:commandButton id="excButton" icon="ui-icon-trash" title="Excluir" update="@form" actionListener="#{localidadeBean.excluir(loc)}">
+                            <p:confirm header="Confirmar exclusão?" message="Deseja realmente excluir a localidade?" icon="ui-icon-alert"/>
+                        </p:commandButton>
+                    </p:column>
+                </p:dataTable>
+                <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
+                    <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+                    <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+                </p:confirmDialog>
+            </h:form>
+            <p:dialog id='dlgCadastro' widgetVar="dlgCadastro" header="Cadastro de Localidade" modal="true">
+                <h:form id='frmCadastro' prependId="false">
+                    <h:inputHidden value ='#{localidadeBean.localidade.id}'/>
+                    <p:panelGrid columns="2">
+                        <p:outputLabel value='Nome:' for='nome'/>  
+                        <p:inputText id='nome' value='#{localidadeBean.localidade.nome}'/> 
+                        <p:outputLabel value='Foto local:' for='fotoLocal'/>  
+                        <p:inputText id='fotoLocal' value='#{localidadeBean.localidade.fotoLocal}'/>                       
+                        <p:outputLabel value="Agência:" for="agencia"/>
+                        <p:autoComplete id="agencia" value="#{localidadeBean.agencia}"  dropdown="true" forceSelection="true"  completeMethod="#{localidadeBean.buscarAgencias}" var="ag" itemLabel="#{ag.nome}" itemValue="#{ag}"
+                                        converter="AgenciaConverter" scrollHeight="100" readonly="#{localidadeBean.edicao}">                           
+                        </p:autoComplete>
+                        <p:commandButton value='Salvar' icon='ui-icon-disk' actionListener="#{localidadeBean.salvar()}" update="@all"/>
+                    </p:panelGrid>
+                </h:form>
+            </p:dialog>
+        </ui:define>
+    </ui:composition>
+</html>
+

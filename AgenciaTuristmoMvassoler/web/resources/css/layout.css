@@ -1,0 +1,36 @@
+*{ 
+    text-decoration: none;
+    margin:0;
+    padding: 0;
+    border: none;
+    list-style: none;
+    outline: 0;
+}
+body{
+    font-size: .9em;
+    text-align: justify;
+}
+.botaoFull{
+    width: 100%;
+    font-size: .9em!important;
+    text-align: left!important;
+}
+.elementoFull{width: 100%;}
+.elemento-margin-top{
+    margin-top: 5px;
+}
+.elemento-margin-left{
+    margin-left: 5px;
+}
+.panelGrigFull{
+     width: 100%;
+}
+.imgFotoLocal{
+    width: 60px;
+    height: 45px;
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+

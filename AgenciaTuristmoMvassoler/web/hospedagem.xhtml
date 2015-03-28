@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/templates/template.xhtml">
+        <ui:define name="conteudo">
+            <p:growl showDetail="true" id="msg"/>
+            <h:form id="frmHospedagem">
+                <p:commandButton value="Novo" icon="ui-icon-plusthick" id="insButton" update=":frmCadastro"  actionListener="#{hospedagemBean.prepararAdd}" oncomplete="PF('dlgCadastro').show()"/>
+                <p:dataTable styleClass="elemento-margin-top elemento-margin-left" id="dTableHospedagens" var="hosp" 
+                             value="#{hospedagemBean.listaHospedagens}" rows="5" paginator="true" paginatorPosition="top">
+                    <f:facet name="header"> HOSPEDAGENS </f:facet>
+                    <p:column headerText="Agencia">
+                        <h:outputText value="#{hosp.local.agencia.nome}"/>
+                    </p:column>
+                    <p:column headerText="Localidade">
+                        <h:outputText value="#{hosp.local.nome}"/>
+                    </p:column>
+                    <p:column headerText="Hospedagem">
+                        <h:outputText value="#{hosp.descricao}"/>
+                    </p:column>
+                    <p:column headerText="Diária">
+                        <h:outputText value="#{hosp.precoDiaria}">
+                            <f:convertNumber type="currency" currencySymbol="R$"/>
+                        </h:outputText>
+                    </p:column>
+                    <p:column style="width: 6%;" exportable="false">
+                        <p:commandButton id="altButton" icon="ui-icon-pencil" title="Editar" update=":frmCadastro" actionListener="#{hospedagemBean.editar(hosp)}"  oncomplete="PF('dlgCadastro').show()"/>
+                    </p:column>
+                    <p:column style="width: 6%;" exportable="false">
+                        <p:commandButton id="excButton" icon="ui-icon-trash"  title="Excluir" update="@form" actionListener="#{hospedagemBean.excluir(hosp)}">
+                            <p:confirm header="Confirmar exclusão?"  message="Deseja realmente excluir essa hospedagem?" icon="ui-icon-alert"/>
+                        </p:commandButton>
+                    </p:column>
+                </p:dataTable>
+                <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
+                    <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+                    <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+                </p:confirmDialog>
+            </h:form>
+            <p:dialog id="dlgCadastro" widgetVar="dlgCadastro" header="Cadastro de Hospedagens" modal="true">
+                <h:form id="frmCadastro" prependId="false">
+                    <h:inputHidden value="#{hospedagemBean.hospedagem.id}"/>
+                    <p:panelGrid columns="2">
+                        <p:outputLabel value="Agência:" for="agencia"/>
+                        <p:autoComplete id="agencia" value="#{hospedagemBean.agencia}"  dropdown="true" forceSelection="true"  completeMethod="#{hospedagemBean.buscarAgencias}" var="ag" itemLabel="#{ag.nome}" itemValue="#{ag}"
+                                        converter="AgenciaConverter" scrollHeight="100" readonly="#{hospedagemBean.edicao}">
+                            <p:ajax event="itemSelect" update="localidade" listener="#{hospedagemBean.definirObjeto}"/>
+                        </p:autoComplete>
+                        
+                        <p:outputLabel value="Localidade:" for="localidade"/>
+                        <p:autoComplete id="localidade" value="#{hospedagemBean.local}" dropdown="true" forceSelection="true"  completeMethod="#{hospedagemBean.buscarLocalidade}" var="loc" itemLabel="#{loc.nome}" itemValue="#{loc}"
+                                        converter="LocalidadeConverter" scrollHeight="100" readonly="#{hospedagemBean.edicao}"/>
+                        
+                        <p:outputLabel value="Descrição:" for="descricao"/>
+                        <p:inputText id="descricao"  value="#{hospedagemBean.hospedagem.descricao}"/>
+                        
+                        <p:outputLabel value="Preço diária" for="diaria"/>
+                        <p:inputText id="diaria" value="#{hospedagemBean.hospedagem.precoDiaria}"/>
+                        
+                        <p:commandButton value="Salvar" icon="ui-icon-disk" actionListener="#{hospedagemBean.salvar}"  update="@all"/> 
+                    </p:panelGrid>
+                </h:form>
+            </p:dialog>
+        </ui:define>
+    </ui:composition>
+</html>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="PaginasEstilo/faculdadeestilo.xsl"?>
+<faculdade>
+    <aluno identificador="555">
+        <nome>Marta</nome>
+        <idade>25</idade>
+    </aluno>
+    <aluno identificador="556">
+        <nome>Marcelo</nome>
+        <idade>32</idade>
+    </aluno>
+</faculdade>

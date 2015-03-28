@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="PaginasEstilo/livrofolhaestilo.xsl"?>
+<livro isbn="777-888888-9-X">
+    <titulo>XML - Como programar</titulo>
+    <autor>
+        <nome>Paulo</nome>
+        <sobrenome>Deitel</sobrenome>
+    </autor>    
+    <capitulos>
+        <capitulo numero ="1" paginas="12">Criando Marcações com XML</capitulo>
+        <capitulo numero ="2" paginas="17">Folhas de Estilo - XSLT</capitulo>
+    </capitulos>
+    <midia tipo = "CD"/>
+</livro>

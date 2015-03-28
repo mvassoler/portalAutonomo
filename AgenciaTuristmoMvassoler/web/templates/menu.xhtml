@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:form id="frmMenu" rendered="#{userSessao.perfil=='Gestor'}" >
+        <p:panel header="Menu Principal" styleClass="elemento-margin-top">
+            <p:menu id="menuAdm" styleClass="elemento-margin-top elementoFull">
+                <p:submenu label="Menu Administrativo">
+                    <p:menuitem value="Agências" icon="ui-icon-home"
+                                outcome="agencias"/>
+                    <p:menuitem value="Localidades" icon="ui-icon-star"
+                                outcome="localidade"/>
+                    <p:menuitem value="Hospedagem" icon="ui-icon-disk"
+                                outcome="hospedagem"/>
+                    <p:menuitem value="Catálogo" icon="ui-icon-pencil"
+                                outcome="catalogo"/>
+                </p:submenu>
+            </p:menu>
+        </p:panel>
+    </h:form>
+
+</html>
+

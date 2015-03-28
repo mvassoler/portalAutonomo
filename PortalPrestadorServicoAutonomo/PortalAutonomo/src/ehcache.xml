@@ -1,0 +1,187 @@
+<ehcache>
+    <diskStore path="java.io.tmpdir"/>
+
+    <defaultCache
+        maxElementsInMemory="10000"
+        eternal="false"
+        timeToIdleSeconds="120"
+        timeToLiveSeconds="120"
+        overflowToDisk="true"
+        />
+
+    <cache name="br.portal.autonomo.Modelo.SituacaoTributaria"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />
+        
+	<cache name="br.portal.autonomo.Modelo.UnidadeMedida"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />        
+        
+    <cache name="br.portal.autonomo.Modelo.NCM"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />
+        
+    <cache name="br.portal.autonomo.Modelo.Linha"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />
+        
+    <cache name="br.portal.autonomo.Modelo.SubLinha"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />
+        
+    <cache name="br.portal.autonomo.Modelo.LinhaSubLinha"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />
+        
+    <cache name="br.portal.autonomo.Modelo.Item"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />
+        
+    <cache name="br.portal.autonomo.Modelo.Pessoa"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />                            
+
+    <cache name="br.portal.autonomo.Modelo.Cidade"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />        
+        
+    <cache name="br.portal.autonomo.Modelo.Estado"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />        
+        
+    <cache name="br.portal.autonomo.Modelo.Endereco"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />        
+        
+ 	<cache name="br.portal.autonomo.Modelo.PessoaEndereco"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />                
+        
+    <cache name="br.portal.autonomo.Modelo.Telefone"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />        
+        
+    <cache name="br.portal.autonomo.Modelo.Contato"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />        
+        
+	<cache name="br.portal.autonomo.Modelo.ListaEmail"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true" 
+        />     
+        
+	<cache name="br.portal.autonomo.Modelo.TipoBloqueioCredito"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true" 
+        />  
+        
+	<cache name="br.portal.autonomo.Modelo.Fornecedor"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true" 
+        />  
+        
+    <cache name="br.portal.autonomo.Modelo.Cliente"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true" 
+        />  
+        
+	<cache name="br.portal.autonomo.Modelo.Autonomo"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true" 
+        />   
+        
+	<cache name="br.portal.autonomo.Modelo.PrecoItemFornecedor"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true" 
+        />           
+        
+    <cache name="br.portal.autonomo.Modelo.CFOP"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true" 
+        />  
+        
+    <cache name="br.portal.autonomo.Modelo.Servico"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true" 
+        />          
+</ehcache>

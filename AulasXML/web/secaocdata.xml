@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Uso seção cdata-->
+<anuncios>
+    <anuncio>McDonald&apos;s 5K Mulheres em movimento, participe deste grande evento com suas amigas e familia</anuncio>
+    <anuncio><![CDATA[McDonald's 5K Mulheres em movimento, participe deste grande evento com suas amigas e familia]]></anuncio>
+</anuncios>

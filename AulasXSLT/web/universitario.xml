@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="PaginasEstilo/universitariofolha.xsl"?>
+<faculdade>
+    <aluno identificador="555">
+        <nome>Marta</nome>
+        <idade>29</idade>
+    </aluno>
+</faculdade>

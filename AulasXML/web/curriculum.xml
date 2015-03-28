@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<curriculum>
+    <datainformacao dia="21/03/2015" hora="10:58"/>
+    <nome>Marcos Vassoler</nome>
+    <endereco>Rua Guadalajara</endereco>
+    <numero>117</numero>
+    <cidade>Lencóis Paulista</cidade>
+    <cep cidade="18680" endereco="18680150"/>
+    <telefones>
+        <telefone>
+            <tipo>residencial</tipo>
+            <numero>33338888</numero>
+        </telefone>
+        <telefone>
+            <tipo>celular</tipo>
+            <numero>33338888</numero>
+        </telefone>
+    </telefones>
+    <estado>SP</estado>
+    <formacoes>
+        <formacao>
+            <instituicao>Facol</instituicao>
+            <graducao>Bacharel Sistemas de Informação</graducao>
+            <anoconclusao>2008</anoconclusao>
+        </formacao>
+        <formacao>
+            <instituicao>USC</instituicao>
+            <graducao>Especialização em Desenvolvimento Java Web</graducao>
+            <anoconclusao></anoconclusao>
+        </formacao>
+    </formacoes>
+    <experienciaprofissional>
+        <profissao>
+            <empresa>Lwarcel Celulose e Papel</empresa>
+            <cargo>Operador de Empihadeira</cargo>
+            <anoadmissao>1993</anoadmissao>
+            <anodemissao>2010</anodemissao>
+        </profissao>
+        <profissao>
+            <empresa>Support Informática</empresa>
+            <cargo>Programador Cobol</cargo>
+            <anoadmissao>2010</anoadmissao>
+            <anodemissao></anodemissao>
+        </profissao>
+    </experienciaprofissional>
+    <habilidades>
+        <habilidade>
+            <![CDATA[Experiência em logística, estoque, expedição e operação de máquinas]]>
+        </habilidade>
+        <habilidade>
+            <![CDATA[Experiência programação em Cobol; modelagem, criação e manipulação de banco de dados]]>
+        </habilidade>
+        <habilidade>
+            <![CDATA[Conhecimento inicial do ambiente de desenvolbimento Java, desenvolvimento Web, comunicação de dados em XML, HTML, 
+                     geração de relatório com IReport, UML, padrões de projeto, HIbernate e JSF com Primefaces]]>
+        </habilidade>
+        <habilidade>
+            <![CDATA[Conhecimento básico de metodologias para utilização de Estoque, PCP, Contabilidade, Escrita Fiscal, Pagar, Receber, Caixa, Bancos e Compras]]>
+        </habilidade>
+        <habilidade>
+            <![CDATA[Responsável pelo desenvolvimento do módulo de gestão industrial para o ERP Sinc]]>
+        </habilidade>
+    </habilidades>
+</curriculum>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/portalautonomo</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		
+		<property name="hibernate.hbm2ddl.auto">update</property>	
+		
+		<!-- configuration pool via c3p0-->
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">180</property> <!-- seconds -->
+		<property name="hibernate.c3p0.idle_test_period">100</property>
+		<property name="hibernate.c3p0.preferredTestQuery">Select 1;</property>
+		
+		<property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</property>
+					
+		<mapping class="br.portal.autonomo.Modelo.SituacaoTributaria" />
+		<mapping class="br.portal.autonomo.Modelo.NCM" />
+		<mapping class="br.portal.autonomo.Modelo.UnidadeMedida" />
+		<mapping class="br.portal.autonomo.Modelo.Linha" />
+		<mapping class="br.portal.autonomo.Modelo.SubLinha" />
+		<mapping class="br.portal.autonomo.Modelo.LinhaSubLinha" />
+		<mapping class="br.portal.autonomo.Modelo.Item" />		
+		<mapping class="br.portal.autonomo.Modelo.Estado" />
+		<mapping class="br.portal.autonomo.Modelo.Cidade" />
+		<mapping class="br.portal.autonomo.Modelo.Endereco" />
+		<mapping class="br.portal.autonomo.Modelo.PessoaEndereco" />
+		<mapping class="br.portal.autonomo.Modelo.Contato" />
+		<mapping class="br.portal.autonomo.Modelo.ListaEmail" />
+		<mapping class="br.portal.autonomo.Modelo.Telefone" />
+		<mapping class="br.portal.autonomo.Modelo.Pessoa" />
+		<mapping class="br.portal.autonomo.Modelo.TipoBloqueioCredito" />
+		<mapping class="br.portal.autonomo.Modelo.Autonomo" />
+		<mapping class="br.portal.autonomo.Modelo.Fornecedor" />
+		<mapping class="br.portal.autonomo.Modelo.Cliente" />
+		<mapping class="br.portal.autonomo.Modelo.PrecoItemFornecedor" />
+		<mapping class="br.portal.autonomo.Modelo.CFOP" />
+		<mapping class="br.portal.autonomo.Modelo.Servico" />
+
+	</session-factory>
+</hibernate-configuration>

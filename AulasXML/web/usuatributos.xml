@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endereco>
+    <enderecoprofissional empresa="USC" pais="Brasil" uf="SP" logradouro="Rua Irmã Arminda"
+                          bairro="Jardim Brasil" cidade="Bauru" cep="18650-000" ddd="14"
+                          telefone="22223333" e-mail="mjs@usc.com.br" home-page="http://www.usc.br"  >
+    </enderecoprofissional>
+</endereco>

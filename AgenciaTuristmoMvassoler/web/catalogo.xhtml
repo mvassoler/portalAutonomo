@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/templates/template.xhtml">
+        <ui:define name="conteudo">
+            <h:form id="frmGrid">
+                <p:dataGrid var="localidade" columns="3" 
+                            styleClass="elemento-margin-top elemento-margin-left"
+                            value="#{catalogoBean.listaLocalidades}">
+                    <f:facet name="header">
+                        Escolha sua localidade
+                    </f:facet>
+                    <p:panel header="#{localidade.id}">
+                        <h:panelGrid columns="1" style="width: 100%">
+                             <h:graphicImage library="img" styleClass="imgFotoLocal"
+                                   name="#{localidade.fotoLocal}"/> 
+                            <h:outputText value="#{localidade.nome}"/>
+                            <p:commandLink update=":frmGrid:detalhes"
+                                           oncomplete="PF('dlgDetalhes').show()"
+                                           title="Ver detalhes">
+                                <h:outputText styleClass="ui-icon ui-icon-search"
+                                              style="margin:0 auto;"/>
+                                <f:setPropertyActionListener value="#{localidade}"
+                                                             target="#{catalogoBean.localEscolhido}"/>
+                            </p:commandLink>
+                        </h:panelGrid>
+                    </p:panel>
+                </p:dataGrid>
+                <p:dialog header="Detalhes da Localidade" id="detalhes"
+                          widgetVar="dlgDetalhes" modal="true" resizable="false"
+                          showEffect="fade" hideEffect="explode">
+                    <p:panelGrid columns="2" columnClasses="label, value"
+                                 rendered="#{not empty catalogoBean.localEscolhido}">
+                        <f:facet name="header">
+                            <h:graphicImage library="img" styleClass="imgFotoLocal"
+                                   name="#{catalogoBean.localEscolhido.fotoLocal}"/> 
+                        </f:facet>
+                        <h:outputText value="ID:"/>
+                        <h:outputText value="#{catalogoBean.localEscolhido.id}"/>
+                        <h:outputText value="LOCAL:"/>
+                        <h:outputText value="#{catalogoBean.localEscolhido.nome}"/>
+                        <h:outputText value="AGENCIA:"/>
+                        <h:outputText value="#{catalogoBean.localEscolhido.agencia.nome}"/>
+                    </p:panelGrid>
+                    <p:carousel value="#{catalogoBean.localEscolhido.hospedagens}"
+                                headerText="Hospedagens:" var="hosp"
+                                numVisible="1">
+                        <h:panelGrid columns="2"  columnClasses="label, value">
+                            <h:outputText value="Descrição"/>
+                            <h:outputText value="#{hosp.descricao}"/>
+                            <h:outputText value="Preço diária:"/>
+                            <h:outputText value="#{hosp.precoDiaria}">
+                                <f:convertNumber type="currency"
+                                                 currencySymbol="R$"/>
+                            </h:outputText>
+                        </h:panelGrid>
+                    </p:carousel>
+                                
+                </p:dialog>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+

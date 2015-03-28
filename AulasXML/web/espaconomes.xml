@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cadastro xmlns:empresario = "www.empresario.com.br"
+          xmlns:empresa = "www.empresa.com.br">
+    <empresario:nome>Pedro</empresario:nome>
+    <empresa:nome>Sorveteria Kil Gelado</empresa:nome>
+</cadastro>
