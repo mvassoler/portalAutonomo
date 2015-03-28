@@ -24,23 +24,23 @@ public class Pessoa implements Serializable {
 
     private Integer id;
 
-    @NotEmpty(message = "O nome é um campo requerido")
+    @NotEmpty(message = "{modelo.pessoa.nome.notEmpty}")
     private String nome;
 
-    @Email(message = "Informe um e-mail válido")
-    @NotEmpty(message = "E-mail é um campo requerido")
+    @Email(message = "{modelo.pessoa.email.valido}")
+    @NotEmpty(message = "{modelo.pessoa.email.notEmpty}")
     private String email;
 
-    @Pattern(regexp = "\\(\\d{2}\\)\\d{4}\\-\\d{4}", message = "Informe no formato (99)9999-9999")
+    @Pattern(regexp = "\\(\\d{2}\\)\\d{4}\\-\\d{4}", message = "{modelo.pessoa.telefone.pattern}")
     private String telefone;
 
-    @Range(min = 10, max = 80, message = "A idade deve estar entre {min} e {max}")
+    @Range(min = 10, max = 80, message = "{modelo.pessoa.idade.range}")
     private int idade;
 
-    @Past(message = "A data de nascimento deve ser menor que a data atual")
+    @Past(message = "{modelo.pessoa.dataNascimento.past}")
     private Date dataNascimento;
 
-    @DecimalMin(value = "1", message = "A renda deve ser maior do que R$ 1,00")
+    @DecimalMin(value = "1", message = "{modelo.pessoa.renda.decimalMin}")
     private double renda;
 
     private Cidade cidade;

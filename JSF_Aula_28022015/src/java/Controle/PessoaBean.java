@@ -103,11 +103,12 @@ public class PessoaBean {
             this.pessoa.setId(this.listaPessoas.size() + 1);
             this.listaPessoas.add(this.pessoa);
         }
-        msg = "ID: " + this.pessoa.getId();
-        msg += " Nome: " + this.pessoa.getNome();
-        msg += " E-Mail: " + this.pessoa.getEmail();
-        msg += " Telefone: " + this.pessoa.getTelefone();
-        msg += " Cidade: " + this.pessoa.getCidade().getNome() + " - " + this.pessoa.getCidade().getUf();
+        //msg = "ID: " + this.pessoa.getId();
+        //msg += " Nome: " + this.pessoa.getNome();
+        //msg += " E-Mail: " + this.pessoa.getEmail();
+        //msg += " Telefone: " + this.pessoa.getTelefone();
+        //msg += " Cidade: " + this.pessoa.getCidade().getNome() + " - " + this.pessoa.getCidade().getUf();
+        msg = ConversorMsgIdioma.getMsg("crud.sucesso.salvar");
         FacesMessage fmsg = new FacesMessage(msg);
         FacesContext.getCurrentInstance().addMessage(null, fmsg);
         this.editando = false;
